@@ -26,39 +26,42 @@ class MainActivity : AppCompatActivity() {
 
     fun restartGame(view:View)
     {
-            button1.setBackgroundResource(android.R.drawable.btn_default)
-            button2.setBackgroundResource(android.R.drawable.btn_default)
-            button3.setBackgroundResource(android.R.drawable.btn_default)
-            button4.setBackgroundResource(android.R.drawable.btn_default)
-            button5.setBackgroundResource(android.R.drawable.btn_default)
-            button6.setBackgroundResource(android.R.drawable.btn_default)
-            button7.setBackgroundResource(android.R.drawable.btn_default)
-            button8.setBackgroundResource(android.R.drawable.btn_default)
-            button9.setBackgroundResource(android.R.drawable.btn_default)
+        var cellId=0
+        for (cellId in 1..9) {
+            var button_selected: Button?
+            var button_selected: Button?
+            val button1 = findViewById<Button>(R.id.button1)
+            val button2 = findViewById<Button>(R.id.button2)
+            val button3 = findViewById<Button>(R.id.button3)
+            val button4 = findViewById<Button>(R.id.button4)
+            val button5 = findViewById<Button>(R.id.button5)
+            val button6 = findViewById<Button>(R.id.button6)
+            val button7 = findViewById<Button>(R.id.button7)
+            val button8 = findViewById<Button>(R.id.button8)
+            val button9 = findViewById<Button>(R.id.button9)
+            button_selected = when (cellId) {
 
-            button1.text = ""
-            button2.text = ""
-            button3.text = ""
-            button4.text = ""
-            button5.text = ""
-            button6.text = ""
-            button7.text = ""
-            button8.text = ""
-            button9.text = ""
-
+                1 -> button1
+                2 -> button2
+                3 -> button3
+                4 -> button4
+                5 -> button5
+                6 -> button6
+                7 -> button7
+                8 -> button8
+                9 -> button9
+                else -> {
+                    button1
+                }
+                        }
+            button_selected.text = ""
+            button_selected.setBackgroundResource(android.R.drawable.btn_default)
+            button_selected.isEnabled = true
+        }
+ 
             Player1.clear()
             Player2.clear()
             ActivePlayer = 1
-
-            button1.isEnabled = true
-            button2.isEnabled = true
-            button3.isEnabled = true
-            button4.isEnabled = true
-            button5.isEnabled = true
-            button6.isEnabled = true
-            button7.isEnabled = true
-            button8.isEnabled = true
-            button9.isEnabled = true
 
         setPlayer = 1
         PVP.setBackgroundColor(Color.CYAN)
